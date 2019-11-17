@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore omnis pariatur amet nihil, enim earum, eos esse deserunt aut voluptatem repudiandae eaque illum? Vitae, doloribus similique! Harum eligendi voluptate quam.
+    <img data-src="000.jpg" src="00.jpg" class="blur">
+    <img data-src="001.jpg" src="01.jpg" class="blur">
+    <img data-src="002.jpg" src="02.jpg" class="blur">
+    <img data-src="003.jpg" src="03.jpg" class="blur">
+    <img data-src="004.jpg" src="04.jpg" class="blur">
+    <img data-src="005.jpg" src="05.jpg" class="blur">
+</body>
+<script>
+    document.addEventListener('scroll', lazyLoad, false)
+ function lazyLoad() {
+    let lazyList = document.querySelectorAll('.blur')
+    for (let lazy of lazyList) {
+        alert(lazy.hasAttribute('data-src'))
+        if (lazy.hasAttribute('data-src')) {
+    console.log(lazy, '-------');
+    let data = lazy.getAttribute('data-src');
+    console.log(data);
+    lazy.setAttribute('src', data);
+    lazy.src = data;
+    alert(lazy.getAttribute('src'))
+
+        }
+        document.removeEventListener('scroll', lazyload);
+    }
+}
+
+ 
+
+
+
+    
+
+
+
+
+
+
+
+
+
+</script>
+</html>
